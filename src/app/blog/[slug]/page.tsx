@@ -2,6 +2,7 @@ import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
+import CommentSection from "@/components/Comment";
 
 export const revalidate = 60; // seconds
 
@@ -48,6 +49,7 @@ export default async function page({ params: { slug } }: { params: { slug: strin
           {post.summary}
         </p>
       </section>
+      <CommentSection/>
 
       {/* Author Section */}
       <section className="flex flex-col sm:flex-row items-center gap-6 bg-light dark:bg-darkPrimary p-6 rounded-lg shadow-lg">
